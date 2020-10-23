@@ -1,17 +1,20 @@
+// Refer https://medium.com/javascript-in-plain-english/how-to-set-up-protected-routes-in-your-react-application-a3254deda380
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import Login from './Login';
+import Dashboard from './Dashboard';
+import Settings from './Setting';
+import ProtectedRoute from './ProtectedRoute';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render((
+     <BrowserRouter>
+         <Switch>
+             <Route path="/login" component={Login} />
+             <ProtectedRoute exact={true} path="/" component={Dashboard} />
+             <ProtectedRoute path="/settings" component={Settings} />
+             <ProtectedRoute component={Dashboard} />
+         </Switch>
+     </BrowserRouter>
+ ), document.getElementById('root'));
