@@ -1,3 +1,4 @@
+<pre>
 This is for implementing private routes in react and it uses tokens in local storage.
 
 In this code we have 5 files and three web pages (Login,Setting,Dashboard)
@@ -22,6 +23,7 @@ Login.js
     It is the main page where user is taken if he is not authenticated.
 Dashboard.js & Setting.js:
     These are basic sample pages made to show how private routing works.
+</pre>
 
 
 If user is authenticated and enters a wrong path then he is always taken to dashboard page because in line <ProtectedRoute component={Dashboard} /> i.e index.js Line no 17, we have not given any path and have send Dashboard as props to ProtectedRoute.js.
