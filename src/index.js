@@ -11,9 +11,9 @@ import ProtectedRoute from './ProtectedRoute';
 ReactDOM.render((
      <BrowserRouter>
          <Switch>
-             <Route path="/login" component={Login} />
+             <Route path="/login" component={Login}  exact/>
              <ProtectedRoute exact={true} path="/" component={Dashboard} />
-             <ProtectedRoute path="/settings" component={Settings} />
+             <ProtectedRoute path="/setting" component={Settings} />
              <ProtectedRoute component={Dashboard} />
          </Switch>
      </BrowserRouter>
